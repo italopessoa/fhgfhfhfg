@@ -1,0 +1,203 @@
+<html>
+   <head>
+      <title>Login</title>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="material.min.css">
+      <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-deep_orange.min.css" />-->
+      <link rel="stylesheet" href="material.orange-deep_orange.min.css" />
+      <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css" />-->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-pink.min.css" />-->
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+      <style>
+         .mdl-menu--bottom-right{
+         /*float: right;*/
+         }
+         .mdl-layout__header,
+         .mdl-layout__drawer-button {
+         /* This background is dark, so we set text to white. Use 87% black instead if
+         your background is light. */
+         color: white;
+         }
+         .mdl-layout__drawer-button
+         {
+         padding-top: 12;
+         height: auto;
+         color: white !important;
+         }
+         .mdl-menu__container{
+         right: 40px !important;
+         }
+         .section--center{
+         max-width: 560px;;
+         }
+         .pesquisas{
+         padding: 8px;
+         padding-top: 48px;
+         }
+         .section__play-btn{
+         min-height: 200px;
+         }
+         .mdl-progress
+        {
+            width: 100%;
+            /*height: 2%;*/
+        }
+        .mdl-progress-red > .progressbar {
+            background-color: rgb(255,0,0);
+        }
+        /*http://stackoverflow.com/questions/36971267/mdl-changing-color-of-indeterminate-progress-bar*/
+        .mdl-progress-red > .bufferbar {
+            background-image: linear-gradient(to right, yellow, yellow), linear-gradient(to right, rgb(255,255,255), rgb(255,255,255));
+        }
+      </style>
+   </head>
+   <body>
+        <!-- MDL Progress Bar with Indeterminate Progress -->
+        <div id="progressbar" hidden class="mdl-progress mdl-js-progress mdl-progress__indeterminate mdl-progress-red"></div>
+      <!--mdl-layout--no-desktop-drawer-button-->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header 
+         mdl-layout--fixed-tabs mdl-color--grey-300">
+      <!--HEADER-->
+      <header class="mdl-layout__header">
+         <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">inicio</span>
+            <div class="mdl-layout-spacer"></div>
+            <!--mdl-layout--large-screen-only-->
+            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+               <li class="mdl-menu__item">Meu perfil</li>
+               <!--<li class="mdl-menu__item">Another Action</li>
+                  <li disabled class="mdl-menu__item">Disabled Action</li>-->
+               <li class="mdl-menu__item">Sair</li>
+            </ul>
+         </div>
+         <!-- Tabs -->
+         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a id="tabPesquisas" href="#fixed-tab-1" class="mdl-layout__tab is-active">Pesquisas</a>
+            <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
+            <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
+         </div>
+      </header>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--grey-500">
+         <header class="demo-drawer-header mdl-color--primary">
+            <img src="user.jpg" class="demo-avatar">
+            <span class="mdl-color-text--white">hello@example.com</span>
+         </header>
+         <nav class="demo-navigation mdl-navigation">
+            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">home</i>Home</a>
+            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">inbox</i>Inbox</a>
+            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">delete</i>Trash</a>
+            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">report</i>Spam</a>
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+         </nav>
+      </div>
+      <!--CONTENT-->
+      <main class="mdl-layout__content">
+         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+            <div class="page-content" id="page-content-pesquisas">
+               <article class="pesquisas">
+                  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                     <!--<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                        <i class="material-icons">play_circle_filled</i>
+                        </header>-->
+                     <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--4-col-phone">
+                        <div class="mdl-card__supporting-text">
+                           <h4>Projeto Urbano</h4>
+                           Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                           <a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent">Responder pesquisa</a>
+                        </div>
+                     </div>
+                  </section>
+               </article>
+         </section>
+         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+         </section>
+         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+         </section>
+      </main>
+      </div>
+      <script src="./material.min.js"></script>
+      <script>
+      var json = [{"id":1,"curso":"Edgeclub","descricao":"Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipiscing elitamet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit"},
+        {"id":2,"curso":"DabZ","descricao":"Lorem ipsum dolor sit amet, consecLorem ipsum dolor sit amet, consectetur adipiscing elittetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit"},
+        {"id":3,"curso":"Quimm","descricao":"Lorem ipsum dolor sit amet, conseLorem ipsum dolor sit amet, consectetur adipiscing elitctetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit"},
+        {"id":4,"curso":"Quatz","descricao":"Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elitectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit"},
+        {"id":5,"curso":"Twimbo","descricao":"Lorem ipsum dolor sit amet, conLorem ipsum dolor sit amet, consectetur adipiscing elitsectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit"}];
+
+
+        function carregarTabPesquisas2(t){
+            document.getElementById("progressbar").removeAttribute("hidden");
+            setTimeout(function() {
+                carregarTabPesquisas();
+                document.getElementById("progressbar").setAttribute("hidden","");
+                }, t);
+
+        }
+
+        function carregarTabPesquisas(){
+
+            // document.getElementById("progressbar").removeAttribute("hidden");
+            var tab = document.getElementById("page-content-pesquisas");
+            
+            while (tab.firstChild) {
+                tab.removeChild(tab.firstChild);
+            }
+            for(var i = 0; i < json.length; i++){
+                var article = document.createElement("article");
+                var section = document.createElement("section");
+                var divContentCard = document.createElement("div");
+                var divSupportingText = document.createElement("div");
+                var h4 = document.createElement("h4");
+                var divAction = document.createElement("div");
+                var aBotao = document.createElement("a");
+
+                article.classList.add("pesquisas");
+                section.classList.add("section--center", "mdl-grid","mdl-grid--no-spacing","mdl-shadow--2dp");
+                divContentCard.classList.add("mdl-card","mdl-cell","mdl-cell--12-col-desktop","mdl-cell--4-col-phone");
+                divSupportingText.classList.add("mdl-card__supporting-text");
+                divAction.classList.add("mdl-card__actions","mdl-card--border");
+                aBotao.classList.add("mdl-button","mdl-js-button","mdl-button--raised","mdl-js-ripple-effect","mdl-color--accent");
+                aBotao.removeAttribute("href");
+                aBotao.innerText = "Responder Pesquisa";
+
+
+                h4.innerHTML = json[i].curso;
+                divSupportingText.appendChild(h4);
+                divSupportingText.appendChild(document.createTextNode(json[i].descricao));
+                divAction.appendChild(aBotao);
+
+                divContentCard.appendChild(divSupportingText);
+                divContentCard.appendChild(divAction);
+                section.appendChild(divContentCard);
+                article.appendChild(section);
+
+
+            tab.appendChild(article);
+            }
+
+            
+            // document.getElementById("progressbar").setAttribute("hidden","");
+            
+        }
+        window.onload = function(){
+            
+            // for (var i = 0; i < json.length; i++){
+            //     // console.log(json[i].curso);
+            // }
+            document.getElementById("tabPesquisas").onclick = function(){
+                // document.getElementById("progressbar").removeAttribute("hidden");
+                carregarTabPesquisas2(2000);
+            }
+        }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,164 @@
+<html>
+   <head>
+      <title>Login</title>
+      <link rel="stylesheet" href="material.min.css">
+      <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-deep_orange.min.css" />-->
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-lime.min.css" />
+      <!--<link rel="stylesheet" href="material.orange-deep_orange.min.css" />-->
+      <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css" />-->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-pink.min.css" />-->
+      <meta charset="UTF-8">
+      <style>
+        @media screen and (max-width: 520px) {
+            .mdl-card {
+                width: 300px !important;
+            }
+            .material-icons.md-48 { font-size: 24px; }
+        }
+        .mdl-card{
+            width: 70%;
+            height: 50%;
+        }
+        .mdl-layout__content{
+            width: 100%;
+            padding-top: 2%;
+        }
+        .mdl-progress
+        {
+            width: 100%;
+            height: 2%;
+        }
+        .mdl-card__actions{
+            text-align: right;
+        }
+        .mdl-card__supporting-text
+        {
+            height: 60%;
+        }
+        .mdl-card__title
+        {
+            text-align: left;
+            padding-left: 5%;
+            
+        }
+        .material-icons.md-48 { font-size: 48px; }
+        button.mdl-button.mdl-button--fab {
+            margin-right: 2%;
+            /*margin-bottom: 3%;*/
+        }
+
+/*https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/*/
+        .Aligner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Aligner-item {
+            max-width: 50%;
+        }
+
+      </style>
+   </head>
+   <body class="mdl-color--grey-500">
+        <div id="progressbar1" class="mdl-progress mdl-js-progress"></div>
+            <div class="page-content">
+         <main class="mdl-layout__content">
+                <center>
+                    <div class="mdl-card mdl-shadow--6dp">
+                        <div class="mdl-card__title mdl-color--primary">
+                            <h2 class="mdl-card__title-text">1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt?</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+
+                            <div   style="height: auto; border: 0px solid red;">
+                                <button class="mdl-button mdl-button--fab" id="rate"><i class="material-icons">sentiment_dissatisfied</i></button>
+                            </div>
+                            <input class="mdl-slider mdl-js-slider" id="rangeRate" type="range" min="1" max="5" value="0" tabindex="0" >
+                          
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--green" onclick="teste();">
+                            <i class="material-icons">skip_next</i>Próximo
+                            </button>
+                         
+                        </div>
+                    </div>
+                <center>
+            
+         </main>
+            </div>
+      <!--<script src="./material.min.js"></script>-->
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <script>
+      var x = 0;
+      var rng;
+      var b;
+  function teste(){
+        if(x+10 <=100) x+=10;
+        document.querySelector('#progressbar1').MaterialProgress.setProgress(x);
+        }
+
+        function selectRate(element){
+            var parent = element.parentElement;
+            var buttons = parent.getElementsByTagName("button");
+            for(var i = 0; i< buttons.length; i++){
+                buttons[i].classList.remove("mdl-color--accent");
+            }
+            element.classList.add("mdl-color--accent");
+        }
+
+        window.onload = function(){
+            // console.log("LOAD");
+            var fapButtons = document.getElementsByClassName("mdl-button mdl-button--fab");
+            // console.log(fapButtons.length);
+            for(var i = 0; i < fapButtons.length; i++){
+                fapButtons[i].onclick = function(){
+                    selectRate(this);
+                }
+            }
+
+            rng = document.getElementById("rangeRate");
+
+            //read("mousedown");
+             read("mousemove");
+             b = document.getElementById("rate");
+        }
+
+        function read(evtType) {
+            rng.addEventListener(evtType, function() {
+                window.requestAnimationFrame(function () {
+                if(rng.value == 1){
+                    console.log("VERY DISSATISFIED");
+                    b.children[0].innerHTML="sentiment_very_dissatisfied";
+                }
+                else if(rng.value == 2){
+                    console.log("DISSATISFIED");
+                    b.children[0].innerHTML="sentiment_dissatisfied";
+                }
+                else if(rng.value == 3){
+                    console.log("NEUTRAL");
+                    b.children[0].innerHTML="sentiment_neutral";
+                }
+                else if(rng.value == 4){
+                    console.log("SATISFIED");
+                    b.children[0].innerHTML="sentiment_satisfied";
+                }
+                else if(rng.value == 5){
+                    console.log("VERY SATISFIED");
+                    b.children[0].innerHTML="sentiment_very_satisfied";
+                }
+                });
+            });
+        }
+
+        function rangeValueChanged(newVal){
+            console.log(newVal);
+        }
+      </script>
+   </body>
+</html>
+
