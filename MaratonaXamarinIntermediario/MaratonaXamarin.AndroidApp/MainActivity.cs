@@ -19,7 +19,7 @@ namespace MaratonaXamarin.AndroidApp
             var button = this.FindViewById<Button>(Resource.Id.btnCarregar);
             var listView = this.FindViewById<ListView>(Resource.Id.lvwItens);
 
-            button.Click += async (sender, e) =>
+            button.Click +=  async (sender, e) =>
             {
                 var api = new UserApi();
                 var users = await api.ListAsync(new Developer
