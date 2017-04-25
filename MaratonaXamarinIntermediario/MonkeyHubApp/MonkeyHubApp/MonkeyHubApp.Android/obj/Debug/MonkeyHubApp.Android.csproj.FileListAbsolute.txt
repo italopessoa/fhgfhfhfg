@@ -1,0 +1,1 @@
+C:\Users\italo\Documents\MaratonaXamarinIntermediario\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Debug\MonkeyHubApp.Android.csprojResolveAssemblyReference.cache
