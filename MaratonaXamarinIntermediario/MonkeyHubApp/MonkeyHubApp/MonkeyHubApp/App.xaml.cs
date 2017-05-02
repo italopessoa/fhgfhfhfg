@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonkeyHubApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace MonkeyHubApp
         {
             InitializeComponent();
 
-            MainPage = new MonkeyHubApp.MainPage();
+            MainPage = new NavigationPage(new MainPage(new MonkeyHubApiService()));
         }
 
         protected override void OnStart()
