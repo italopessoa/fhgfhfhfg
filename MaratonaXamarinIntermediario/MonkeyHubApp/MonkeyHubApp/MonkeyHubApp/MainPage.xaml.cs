@@ -12,9 +12,18 @@ namespace MonkeyHubApp
 {
     public partial class MainPage : ContentPage
     {
+        private MainViewModel ViewModel => BindingContext as MainViewModel;
         public MainPage(IMonkeyHubApiService monkeyHubApiService)
         {
             InitializeComponent();
+            //var monkeyHubApiService =  DependencyService.Get<IMonkeyHubApiService>()
+            BindingContext = new MainViewModel(monkeyHubApiService);
+        }
+
+        public MainPage()
+        {
+            InitializeComponent();
+            var monkeyHubApiService = DependencyService.Get<IMonkeyHubApiService>();
             BindingContext = new MainViewModel(monkeyHubApiService);
         }
 
@@ -22,6 +31,13 @@ namespace MonkeyHubApp
         {
             var tag = (sender as ListView)?.SelectedItem as Tag;
             (BindingContext as MainViewModel)?.ShowCategoriaCommand.Execute(tag);
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            if (ViewModel != null)
+                await ViewModel.LoadAsync();
         }
     }
 }

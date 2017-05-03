@@ -34,7 +34,7 @@ namespace MonkeyHubApp.ViewModels
 
         public Command<Tag> ShowCategoriaCommand { get; }
 
-        public ObservableCollection<Tag> Resultados { get; }
+        public ObservableCollection<Tag> Tags { get; }
 
         private readonly IMonkeyHubApiService _monkeyHubApiService;
 
@@ -46,7 +46,21 @@ namespace MonkeyHubApp.ViewModels
 
             ShowCategoriaCommand = new Command<Tag>(ExecuteShowCategoriaCommand);
 
-            Resultados = new ObservableCollection<Tag>();
+            Tags = new ObservableCollection<Tag>();
+        }
+
+        public async Task LoadAsync()
+        {
+            var tags = await _monkeyHubApiService.GetTagsAsync();
+
+            System.Diagnostics.Debug.WriteLine("FOUND {0} TAGS", tags.Count);
+            Tags.Clear();
+            foreach (var tag in tags)
+            {
+                Tags.Add(tag);
+            }
+
+            OnPropertyChanged(nameof(Tags));
         }
 
         private async void ExecuteShowCategoriaCommand(Tag tag)
@@ -67,7 +81,7 @@ namespace MonkeyHubApp.ViewModels
                 List<Tag> res = await _monkeyHubApiService.GetTagsAsync();
                 foreach (Tag item in res)
                 {
-                    Resultados.Add(item);
+                    Tags.Add(item);
                 }
             }
             else

@@ -15,6 +15,7 @@ namespace MonkeyHubApp
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage(new MonkeyHubApiService()));
+            //MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
