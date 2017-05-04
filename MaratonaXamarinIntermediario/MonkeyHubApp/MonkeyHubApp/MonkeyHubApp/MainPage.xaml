@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MonkeyHubApp"
-             x:Class="MonkeyHubApp.MainPage" Title="Página Inicial">
+             x:Class="MonkeyHubApp.MainPage" 
+             xmlns:controls="clr-namespace:MonkeyHubApp.Controls;assemlby:MonkeyHubApp"
+             Title="Categorias">
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="About" Command="{Binding AboutCommand}"/>
     </ContentPage.ToolbarItems>
@@ -17,15 +19,18 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>-->
-    <ListView ItemsSource="{Binding Tags}" x:Name="lvwTags">
+    <controls:MyListView ItemsSource="{Binding Tags}" x:Name="lvwTags" HasUnevenRows="True"
+              ItemTappedCommand="{Binding ShowCategoriaCommand}" >
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Label Text="{Binding Name}"/>
-                    <Label Text="{Binding Description}"/>
+                    <StackLayout Padding="20">
+                        <Label Text="{Binding Name}" TextColor="Black" Font="Large"/>
+                        <Label Text="{Binding Description}" TextColor="Gray" Font="Medium"/>
+                    </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </controls:MyListView>
 
 </ContentPage>
