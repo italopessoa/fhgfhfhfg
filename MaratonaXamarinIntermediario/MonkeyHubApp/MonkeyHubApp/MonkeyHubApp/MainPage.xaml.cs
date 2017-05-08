@@ -18,6 +18,11 @@ namespace MonkeyHubApp
             InitializeComponent();
             //var monkeyHubApiService =  DependencyService.Get<IMonkeyHubApiService>()
             BindingContext = new MainViewModel(monkeyHubApiService);
+
+            //lvwTags.ItemSelected += (sender, e) =>
+            //{
+            //    ViewModel.ShowCategoriaCommand.Execute(e.SelectedItem);
+            //};
         }
 
         public MainPage()
@@ -39,5 +44,7 @@ namespace MonkeyHubApp
             if (ViewModel != null)
                 await ViewModel.LoadAsync();
         }
+
+       
     }
 }

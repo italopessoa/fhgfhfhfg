@@ -41,7 +41,7 @@ namespace MonkeyHubApp.ViewModels
         public MainViewModel(IMonkeyHubApiService monkeyHubApiService)
         {
             _monkeyHubApiService = monkeyHubApiService;
-            SearchCommand = new Command(ExcecuteSearchCommand, CanExcecuteSearchCommand);
+            SearchCommand = new Command(ExcecuteSearchCommand);//, CanExcecuteSearchCommand);
             AboutCommand = new Command(ExecutaAboutCommand);
 
             ShowCategoriaCommand = new Command<Tag>(ExecuteShowCategoriaCommand);
@@ -73,22 +73,23 @@ namespace MonkeyHubApp.ViewModels
 
         private async void ExcecuteSearchCommand(object obj)
         {
-            await Task.Delay(1000);
-            bool r = await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou por {SearchTerm}?", "Sim", "Não");
-            if (r)
-            {
-                await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Obrigado", "Ok");
-                List<Tag> res = await _monkeyHubApiService.GetTagsAsync();
-                foreach (Tag item in res)
-                {
-                    Tags.Add(item);
-                }
-            }
-            else
-            {
-                await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "De nada", "Ok");
-                //Resultados.Add("Não");
-            }
+            await PushAsync<SearchViewModel>(_monkeyHubApiService);
+            //await Task.Delay(1000);
+            //bool r = await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou por {SearchTerm}?", "Sim", "Não");
+            //if (r)
+            //{
+            //    await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Obrigado", "Ok");
+            //    List<Tag> res = await _monkeyHubApiService.GetTagsAsync();
+            //    foreach (Tag item in res)
+            //    {
+            //        Tags.Add(item);
+            //    }
+            //}
+            //else
+            //{
+            //    await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "De nada", "Ok");
+            //    //Resultados.Add("Não");
+            //}
         }
 
         private bool CanExcecuteSearchCommand(object arg)

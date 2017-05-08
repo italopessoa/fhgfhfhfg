@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MonkeyHubApp.App">
 	<Application.Resources>
-
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="minhaCor">Red</Color>
+            <Font x:Key="minhaFonte">Small</Font>
+        </ResourceDictionary>
+		
 
 	</Application.Resources>
 </Application>
