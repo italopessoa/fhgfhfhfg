@@ -12,6 +12,11 @@ namespace AppLAB3
         public MainPage()
         {
             InitializeComponent();
+            btnCarregar.Clicked += async (sender, e) =>
+            {
+                var tags = await Api.GetTagAsync();
+                lvwTags.ItemsSource = tags;
+            };
         }
     }
 }

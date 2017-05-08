@@ -4,7 +4,12 @@
              x:Class="AppLAB3.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="danger">Red</Color>
+            <Color x:Key="warning">Yellow</Color>
+            <Color x:Key="info">Blue</Color>
+            <Color x:Key="success">Green</Color>
+        </ResourceDictionary>
 
 	</Application.Resources>
 </Application>
