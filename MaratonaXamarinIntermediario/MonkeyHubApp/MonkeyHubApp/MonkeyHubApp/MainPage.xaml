@@ -5,10 +5,11 @@
              x:Class="MonkeyHubApp.MainPage" 
              xmlns:controls="clr-namespace:MonkeyHubApp.Controls;assemlby:MonkeyHubApp"
              Title="Categorias">
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="About" Command="{Binding AboutCommand}"/>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sobre" Command="{Binding AboutCommand}"/>
+        <ToolbarItem Text="Buscar" Command="{Binding SearchCommand}"/>
     </ContentPage.ToolbarItems>
-    <StackLayout>
+    <!--StackLayout>
         <Entry Text="{Binding SearchTerm}"/>
         <Button Text="Pesquisar" Command="{Binding SearchCommand}"/>
         <ListView ItemsSource="{Binding Resultados}" ItemSelected="ListView_ItemSelected">

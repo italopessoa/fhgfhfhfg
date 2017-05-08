@@ -3,5 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MonkeyHubApp.AboutPage"
              Title="Sobre o Monkey Hub App">
-    <Label Text="Página sobre" HorizontalOptions="Center" VerticalOptions="Center"/>
+    <!--<Label Text="Página sobre" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Versão">
+                <TextCell Text="{Binding Versao}"/>
+            </TableSection>
+            <TableSection Title="Termos de Uso">
+                <SwitchCell Text="Aceito os Termos de Uso"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>

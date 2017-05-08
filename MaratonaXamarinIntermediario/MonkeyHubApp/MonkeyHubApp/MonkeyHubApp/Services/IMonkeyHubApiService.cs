@@ -12,5 +12,6 @@ namespace MonkeyHubApp.Services
         Task<List<Tag>> GetTagsAsync();
         Task<List<Content>> GetContentByTagIdAsync(string tagId);
         Task<List<Content>> GetContentByFilterAync(string filter);
-     }
+        Task<List<Content>> GetContentsByFilterAsync(string filter);
+    }
 }
