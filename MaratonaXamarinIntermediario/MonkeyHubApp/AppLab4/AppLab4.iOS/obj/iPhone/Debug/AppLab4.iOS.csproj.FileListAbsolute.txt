@@ -1,0 +1,6 @@
+C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\AppLab4\AppLab4.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\AppLab4\AppLab4.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\AppLab4\AppLab4.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\AppLab4\AppLab4.iOS\obj\iPhone\Debug\optimized\
+C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\AppLab4\AppLab4.iOS\obj\iPhone\Debug\AppLab4.iOS.csprojResolveAssemblyReference.cache
+C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\AppLab4\AppLab4.iOS\obj\iPhone\Debug\AppLab4.iOS.csproj.AppLab4.iOS.exe.config
