@@ -12,6 +12,7 @@ using Android.Widget;
 using AppLab4.Authentication;
 using Microsoft.WindowsAzure.MobileServices;
 using AppLab4.Droid.Authentication;
+using AppLab4.Helpers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AuthenticateDroid))]
 namespace AppLab4.Droid.Authentication
@@ -22,7 +23,11 @@ namespace AppLab4.Droid.Authentication
         {
             try
             {
-                return await client.LoginAsync(Xamarin.Forms.Forms.Context, provider);
+                var user = await client.LoginAsync(Xamarin.Forms.Forms.Context, provider);
+                Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
+                Settings.UserId = user?.UserId;
+
+                return user;
             }
             catch (Exception ex)
             {

@@ -13,7 +13,7 @@ namespace AppLab4
         {
             InitializeComponent();
 
-            MainPage = new AppLab4.MainPage();
+            MainPage = new NavigationPage(new AppLab4.LoginPage());
         }
 
         protected override void OnStart()
