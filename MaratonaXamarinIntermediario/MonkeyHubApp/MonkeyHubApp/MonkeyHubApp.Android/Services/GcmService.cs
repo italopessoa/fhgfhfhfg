@@ -28,7 +28,7 @@ namespace MonkeyHubApp.Droid.Services
     [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_LIBRARY_RETRY }, Categories = new string[] { "@PACKAGE_NAME@" })]
     public class PushHandlerBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
     {
-        private static string[] sENDER_IDS = new string[] { "44283727310" };
+        private static string[] sENDER_IDS = new string[] { "" };
 
         public static string[] SENDER_IDS { get => sENDER_IDS; }
     }
@@ -36,7 +36,7 @@ namespace MonkeyHubApp.Droid.Services
     [Service]
     public class GcmService : GcmServiceBase
     {
-        private const string mobileApp = "maratonapush";
+        private const string mobileApp = "";
         MobileServiceClient client = new MobileServiceClient($"http://{mobileApp}.azurewebsites.net/");
 
         public static string RegistrationID { get; private set; }

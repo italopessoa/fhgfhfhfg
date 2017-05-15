@@ -13,4 +13,3 @@ C:\Users\italo\Documents\MaratonaXamarinIntermediario\git-tests\MaratonaXamarinI
 C:\Users\italo\Documents\MaratonaXamarinIntermediario\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp\obj\Debug\MonkeyHubApp.App.xaml.g.cs
 C:\Users\italo\Documents\MaratonaXamarinIntermediario\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp\obj\Debug\MonkeyHubApp.dll
 C:\Users\italo\Documents\MaratonaXamarinIntermediario\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp\obj\Debug\MonkeyHubApp.pdb
-C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp\bin\Debug\MonkeyHubApp.dll
