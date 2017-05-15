@@ -2,15 +2,21 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\GCM.Client\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\Microsoft.WindowsAzure.Mobile.Ext\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\GCM.Client\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Microsoft.WindowsAzure.Mobile.Ext\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Release\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Release\__library_projects__\Xamarin.Forms.Platform\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\GCM.Client.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\Microsoft.WindowsAzure.Mobile.Ext.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\git-tests\MaratonaXamarinIntermediario\MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.Android\obj\Release\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>

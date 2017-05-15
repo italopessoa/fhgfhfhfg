@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="monkeyhubapp.android" android:versionCode="1" android:versionName="1.0">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="15" />
+  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <permission android:name="monkeyhubapp.android.permission.C2D_MESSAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="monkeyhubapp.android.permission.C2D_MESSAGE" />
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+  <application android:label="MonkeyHubApp.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="MonkeyHubApp" android:theme="@style/MainTheme" android:name="md5788b19170363ece960cc2c67832f722f.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <receiver android:permission="com.google.android.c2dm.permission.SEND" android:name="md59e09d3f260c5bed871b9f38fe65a1d3e.PushHandlerBroadcastReceiver">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name="monkeyhubapp.android" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="monkeyhubapp.android" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="com.google.android.gcm.intent.RETRY" />
+        <category android:name="monkeyhubapp.android" />
+      </intent-filter>
+    </receiver>
+    <service android:name="md59e09d3f260c5bed871b9f38fe65a1d3e.GcmService" />
+    <activity android:label="Web Authenticator" android:name="md56beaf3ca16f9b29c56822643de3b05fa.FormAuthenticatorActivity" />
+    <activity android:label="Web Authenticator" android:name="md56beaf3ca16f9b29c56822643de3b05fa.WebAuthenticatorActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="monkeyhubapp.android.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>
