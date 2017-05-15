@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="monkeyhubapp.android" android:versionCode="1" android:versionName="1.0">
   <!--suppress UsesMinSdkAttributes-->
   <uses-sdk android:minSdkVersion="15" />
-  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
   <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="YourPackageNameHere.permission.C2D_MESSAGE" />
   <permission android:name="monkeyhubapp.android.permission.C2D_MESSAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="monkeyhubapp.android.permission.C2D_MESSAGE" />
-  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
   <application android:label="MonkeyHubApp.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon">
     <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="MonkeyHubApp" android:theme="@style/MainTheme" android:name="md5788b19170363ece960cc2c67832f722f.MainActivity">
       <intent-filter>
@@ -16,6 +17,12 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <receiver android:enabled="true" android:permission="com.google.android.c2dm.permission.SEND" android:name="md59e09d3f260c5bed871b9f38fe65a1d3e.BackgroundBroadcastReciever">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name="YourPackageName" />
+      </intent-filter>
+    </receiver>
     <receiver android:permission="com.google.android.c2dm.permission.SEND" android:name="md59e09d3f260c5bed871b9f38fe65a1d3e.PushHandlerBroadcastReceiver">
       <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />

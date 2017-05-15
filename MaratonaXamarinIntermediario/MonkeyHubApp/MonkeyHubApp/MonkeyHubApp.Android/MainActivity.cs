@@ -32,7 +32,7 @@ namespace MonkeyHubApp.Droid
             {
                 GcmClient.CheckDevice(this);
                 GcmClient.CheckManifest(this);
-                System.Diagnostics.Debug.WriteLine("Registering...");
+                //System.Diagnostics.Debug.WriteLine("Registering...");
                 GcmClient.Register(this, PushHandlerBroadcastReceiver.SENDER_IDS);
             }
             catch (Java.Net.MalformedURLException ex)

@@ -12,6 +12,7 @@ using System.Diagnostics;
 using Android.Media;
 using Android.Support.V4.App;
 //https://social.msdn.microsoft.com/Forums/pt-BR/749bb39c-bb18-4434-b95c-22309fbcf1d2/uwpmvvmazure-cant-insert-data-to-easy-table-on-azure?forum=azuremobile
+//https://github.com/SaschaDittmann/Xamarin.NotificationHub/issues/9
 [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
