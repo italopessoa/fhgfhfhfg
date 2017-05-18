@@ -8,6 +8,9 @@ using Android.Widget;
 using Android.OS;
 using Gcm.Client;
 using MonkeyHubApp.Droid.Services;
+using Android.Content;
+using Android.Support.V4.App;
+using Android.Media;
 
 namespace MonkeyHubApp.Droid
 {
@@ -27,7 +30,7 @@ namespace MonkeyHubApp.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
-
+            /*
             try
             {
                 GcmClient.CheckDevice(this);
@@ -42,7 +45,8 @@ namespace MonkeyHubApp.Droid
             catch(Exception ex)
             {
                 CreateAndShowDialog(ex.Message, "Error");
-            }
+            }*/
+            CreateNotification("TUTUTU PAA", "DEU CERTO");
         }
 
         private void CreateAndShowDialog(string message, string title)
@@ -52,6 +56,36 @@ namespace MonkeyHubApp.Droid
             builder.SetMessage(message);
             builder.SetTitle(title);
             builder.Create().Show();
+        }
+
+        private void CreateNotification(string title, string desc)
+        {
+            //create notification
+            var notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
+
+            //create an intent to show ui
+            var uiIntent = new Intent(this, typeof(MainActivity));
+
+            //use notification builder
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+
+            //Create the notification
+            //we use the pending intent, passing our ui intent over which will get called
+            //when the notification is tapped.
+            var notification = builder.SetContentIntent(PendingIntent.GetActivity(this, 0, uiIntent, 0))
+
+               .SetSmallIcon(Android.Resource.Drawable.SymActionEmail)
+                .SetTicker(title)
+                .SetContentTitle(title)
+                .SetContentText(desc)
+                .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))//set the notification sound
+                //http://stackoverflow.com/questions/39174818/vibrate-on-push-notification
+                // Each element then alternates between delay, vibrate, sleep, vibrate, sleep
+                .SetPriority((int)NotificationPriority.High)
+                .SetVibrate(new long[] { 200, 300, 200, 300, 500 })
+                .SetAutoCancel(true).Build();//Auto cancel will remove the notification once the user touches it
+
+            notificationManager.Notify(1, notification);
         }
     }
 }

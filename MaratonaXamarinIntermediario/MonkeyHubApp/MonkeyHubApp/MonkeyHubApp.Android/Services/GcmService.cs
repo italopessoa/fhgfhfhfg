@@ -113,6 +113,8 @@ namespace MonkeyHubApp.Droid.Services
                 .SetContentTitle(title)
                 .SetContentText(desc)
                 .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))//set the notification sound
+                .SetPriority((int)NotificationPriority.Max)
+                .SetVibrate(new long[0])
                 .SetAutoCancel(true).Build();//Auto cancel will remove the notification once the user touches it
 
             notificationManager.Notify(1, notification);
